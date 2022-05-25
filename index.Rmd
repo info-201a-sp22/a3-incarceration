@@ -3,9 +3,18 @@ title: "A3: Incarceration"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("chart2_example.R")
+source("chart1_example.R")
+source("map_example.R")
+```
+
 ### Introduction
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+
+   The issue with the united states prision system is moraly inefective, as well as racialy biass. In fact, lack Americans are incarcerated at a state average of 1,240 per 100,000 residents, whereas Latino Americans are imprisoned at a rate of 349 per 100,000 residents. White, non-Latino Americans, meanwhile, are incarcerated at 261 per 100,000 residents. To add, 76 percent of all inmates end up back in jail within five years. In order to solve the problem, we need to indetify the issue through data. This is what I will be trying to through this assignment. 
 
 ### Summary Information
 
@@ -14,21 +23,28 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 These will likely be calculated using your DPLYR skills, answering questions such as: 
 
 - What is the average value of my variable across all the counties (in the current year)?
+
 - Where is my variable the highest / lowest?
+
 - How much has my variable change over the last N years?
 
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
+  In the summary, I decided it was a good Idea to find information that would prove to be somewhat impactfull. These include of creating a summary of black people to white people in jail, the total, average, max, and min. In addition to that information, I included information on a summary for the maximum black and white people in jail in the state of alabama, as this is where my family resides. I feel that all the information I collected would give the viewer an idea on the number bias due to lower population rate, yet higher jail population.
+
+
 ### The Dataset
 
 Who collected the data?  
+The person who collected the data was 
 How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
+Why was the data collected? 2016 - 2017
+How many observations (rows) are in your data?  153811
+How many features (columns) are in the data?   23
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
 What are possible limitations or problems with this data?   (at least 200 words)
 
+The person who colected the dataset was the Vera Institute of Justice. This was made possible by Robert W. Wilson Charitable Trust, who funded a team to explore this topic. The data was collected includes data from the 2016 and 2017 ASJ, and 2016 NCRP, and produced 50 State Fact Sheets using the Incarceration Trends dataset. This data sheet includes of 23 features and 153811 observations in the data set. Looking at the data sheet, an ethical question could be how the races corespond to the number of prison of population. 
 
 ### Trends Over Time Chart
 
@@ -41,13 +57,17 @@ The first chart that you will create and include will show the trend over time o
 - You must have clear x and y axis labels
 - The chart needs a clear title 
 - You need a legend for your different line colors and a clear legend title
-
 When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo=FALSE, warning=FALSE, message=TRUE, error=TRUE}
+over_Time
 ```
+ The data sheet compares the white to black incarceration numbers over time. As you can see the results supriessed me to say the least. As you can see they were identical from 1985-1990, but then for about 10 years the
+white population exceeded the black population. This may be due to the Crime Bill which incarcerated indivduals during this time period.
+ 
+ 
 
 ### Variable Comparison Chart
 
@@ -59,6 +79,14 @@ The second chart that you will create and include will show how two different (c
 - The chart needs a clear title 
 - If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
 
+
+```{r, echo=FALSE, warning=FALSE, message=TRUE, error=TRUE}
+ Comparsion
+
+```
+ The bar chart as seen includes of an x axis representing years, and a y axis. As you can see, comparing 2015 - 2018, the number of black people in jails, outnumbers the number of white people in jail. This data is taken from the state of Alabama, which is a prodomitly white, 68.09% White, Black or African American: 26.64%, Two or more races: 1.89% Other race: 1.45%. I feel that the graph acurately alined with my ideology of the racial dempgraphics in prison. 
+ 
+
 ### Map
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
@@ -68,4 +96,9 @@ The last chart that you will create and include will show how a variable is dist
 - Your map needs a title
 - Your color scale needs a legend with a clear label
 - Use a map based coordinate system to set the aspect ratio of your map
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, error=TRUE}
+cases_Map
+```
+    Lastly, I created a map displaying black jail population in Alabama. The side bar represents the black jail population rate in sepecific counties. More twords the capital, you can see that it becomes increasingly dense. Otherwise, the graph seems to be solidly split among all parts of alabama. This may come to suprise that more black populated areas contain a hgiher jail population in the area. 
 
